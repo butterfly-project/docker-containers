@@ -27,5 +27,4 @@ RUN apt-get update \
 
         && rm -rf /var/cache/apk/*
 
-ENTRYPOINT /bin/bash
-CMD ["true"]
+CMD ["bash"]

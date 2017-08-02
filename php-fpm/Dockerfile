@@ -27,4 +27,7 @@ RUN apt-get update \
 
         && rm -rf /var/cache/apk/*
 
-CMD ["php-fpm"]
+COPY ./start.sh /var/www
+RUN chmod +x /var/www/start.sh
+
+CMD ["/var/www/start.sh"]
