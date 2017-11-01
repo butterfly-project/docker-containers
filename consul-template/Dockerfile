@@ -1,5 +1,8 @@
 FROM hashicorp/consul-template:alpine
 
+# replace consul entrypoint
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
 # install docker (copy from docker/17.10/Dockerfile)
 RUN apk add --no-cache \
 		ca-certificates
