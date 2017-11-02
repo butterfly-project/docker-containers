@@ -13,15 +13,8 @@ RUN apt update \
         && rm -rf /tmp/TexturePacker.deb \
         && echo 'agree' | TexturePacker --license-info
 
+ADD ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
 WORKDIR /usr/src/app
 
-ENTRYPOINT [ \
-  "TexturePacker", \
-  "--algorithm", "Basic", \
-  "--png-opt-level", "0", \
-  "--disable-auto-alias", \
-  "--extrude", "0", \
-  "--trim-mode", "None", \
-  "--format", "json", \
-  "--data" \
-  ]
+ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
