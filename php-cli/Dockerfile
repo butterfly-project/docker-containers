@@ -1,4 +1,4 @@
-FROM php:7.1.7-cli
+FROM php:7.1-cli
 
 RUN echo 'Europe/Moscow' > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 

@@ -1,0 +1,3 @@
+extension=pinba.so
+pinba.enabled=${PINBA_ENABLED}
+pinba.server=${PINBA_SERVER}
