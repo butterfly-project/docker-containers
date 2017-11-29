@@ -15,6 +15,6 @@ RUN apt update \
 
 ADD ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
-WORKDIR /usr/src/app
+WORKDIR /usr/local/app
 
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
