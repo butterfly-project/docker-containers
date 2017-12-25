@@ -11,8 +11,12 @@ RUN apt-get update; \
   mv Spine /usr/local/lib/; \
   ln -s /usr/local/lib/Spine/Spine.sh /usr/local/bin/spine
 
-COPY Spine.sh /usr/local/lib/Spine/Spine.sh
-
 WORKDIR /usr/local/app
 
-ENTRYPOINT [ "spine" ]
+COPY Spine.sh /usr/local/lib/Spine/Spine.sh
+COPY spine-bulk.sh /usr/local/lib/Spine/spine-bulk.sh
+
+RUN ln -s /usr/local/lib/Spine/spine-bulk.sh /usr/local/bin/spine-bulk; \
+  mkdir -p /var/cache/spine
+
+ENTRYPOINT [ "spine-bulk" ]
